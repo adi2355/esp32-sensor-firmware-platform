@@ -12,10 +12,7 @@ NC='\033[0m'
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd "$SCRIPT_DIR"
 
-echo -e "${BLUE}============================================${NC}"
-echo -e "${BLUE}  PlatformIO Flasher Package Builder${NC}"
-echo -e "${BLUE}============================================${NC}"
-echo ""
+
 
 if [ -n "$1" ]; then
     VERSION="$1"
@@ -95,11 +92,7 @@ zip -r "../$ZIP_NAME" \
     src/
 cd ..
 
-echo ""
-echo -e "${GREEN}============================================${NC}"
-echo -e "${GREEN}  PlatformIO Flasher Package Created!${NC}"
-echo -e "${GREEN}============================================${NC}"
-echo ""
+
 echo -e "${CYAN}Package:${NC} $ZIP_NAME"
 ls -lh "$ZIP_NAME" | awk '{print "Size: " $5}'
 echo ""
