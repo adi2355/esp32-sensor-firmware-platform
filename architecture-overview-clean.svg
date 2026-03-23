@@ -1,0 +1,238 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="740" viewBox="0 0 1600 740" role="img" aria-labelledby="title desc">
+  <title id="title"></title>
+  <desc id="desc">Accurate domain-first architecture showing firmware, native runtime, React Native app, and network services.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#111821"/>
+      <stop offset="100%" stop-color="#0d131b"/>
+    </linearGradient>
+    <linearGradient id="firmwareGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0E2435"/>
+      <stop offset="100%" stop-color="#123547"/>
+    </linearGradient>
+    <linearGradient id="iosGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#26143A"/>
+      <stop offset="100%" stop-color="#35124B"/>
+    </linearGradient>
+    <linearGradient id="rnGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#102538"/>
+      <stop offset="100%" stop-color="#183650"/>
+    </linearGradient>
+    <linearGradient id="netGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1B2636"/>
+      <stop offset="100%" stop-color="#223248"/>
+    </linearGradient>
+    
+    <marker id="arrow" markerWidth="14" markerHeight="14" refX="11" refY="7" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,1 L12,7 L0,13 Z" fill="#94A3B8"/>
+    </marker>
+    <marker id="arrow-rev" markerWidth="14" markerHeight="14" refX="3" refY="7" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M14,1 L2,7 L14,13 Z" fill="#94A3B8"/>
+    </marker>
+    
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#020617" flood-opacity="0.28"/>
+    </filter>
+    <style>
+      .title { font: 700 30px Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #F8FAFC; }
+      .subtitle { font: 400 15px Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #94A3B8; }
+      .groupTitle { font: 700 18px Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #E2E8F0; }
+      .groupCopy { font: 400 13px Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #A7B4C8; }
+      .cardTitle { font: 700 15px Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #F8FAFC; }
+      .cardMeta { font: 400 12px Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #A7B4C8; }
+      .label { font: 700 12px Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #E2E8F0; letter-spacing: 0.02em; }
+      .small { font: 500 11px Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #94A3B8; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="740" rx="28" fill="url(#bg)"/>
+  <rect x="32" y="32" width="1536" height="676" rx="24" fill="none" stroke="#1E293B"/>
+
+  <text x="64" y="84" class="title">Low Power Embedded Device to Mobile Flow</text>
+  <text x="64" y="112" class="subtitle"></text>
+
+  <!-- COLUMN 1: Firmware -->
+  <g filter="url(#shadow)">
+    <rect x="64" y="150" width="330" height="490" rx="24" fill="url(#firmwareGrad)" stroke="#155E75"/>
+  </g>
+  <text x="96" y="194" class="groupTitle">Firmware · ESP32‑S3</text>
+
+  <!-- Firmware Nodes -->
+  <g filter="url(#shadow)">
+    <rect x="85" y="220" width="288" height="54" rx="14" fill="#0F172A" stroke="#334155"/>
+    <rect x="85" y="290" width="288" height="54" rx="14" fill="#0F172A" stroke="#334155"/>
+    <rect x="85" y="360" width="288" height="54" rx="14" fill="#0F172A" stroke="#334155"/>
+    <rect x="85" y="430" width="288" height="54" rx="14" fill="#181124" stroke="#D946EF" stroke-opacity="0.5"/>
+    <rect x="85" y="500" width="288" height="54" rx="14" fill="#0F172A" stroke="#3B82F6"/>
+    <!-- FreeRTOS Substrate -->
+    <rect x="85" y="580" width="288" height="40" rx="12" fill="#0B1B2A" stroke="#22C55E" stroke-opacity="0.6"/>
+  </g>
+
+  <rect x="97" y="228" width="6" height="38" rx="3" fill="#38BDF8"/>
+  <rect x="97" y="298" width="6" height="38" rx="3" fill="#60A5FA"/>
+  <rect x="97" y="368" width="6" height="38" rx="3" fill="#7DD3FC"/>
+  <rect x="97" y="438" width="6" height="38" rx="3" fill="#E879F9"/>
+  <rect x="97" y="508" width="6" height="38" rx="3" fill="#3B82F6"/>
+  <rect x="97" y="588" width="6" height="24" rx="3" fill="#4ADE80"/>
+
+  <text x="115" y="242" class="cardTitle">Hardware &amp; Sensors</text>
+  <text x="115" y="260" class="cardMeta">GPIO · I²C · ADC · Proximity Sensor</text>
+  <text x="115" y="312" class="cardTitle">HAL &amp; Drivers</text>
+  <text x="115" y="330" class="cardMeta">ISR-safe access, bus recovery, LEDs</text>
+  <text x="115" y="382" class="cardTitle">Firmware Services</text>
+  <text x="115" y="400" class="cardMeta">Power mgmt, RTC history, time sync</text>
+  <text x="115" y="452" class="cardTitle">OTA Flasher Mode (SoftAP)</text>
+  <text x="115" y="470" class="cardMeta">Isolated Wi-Fi HTTP upload server</text>
+  <text x="115" y="522" class="cardTitle">BLE Stack &amp; Binary Protocol</text>
+  <text x="115" y="540" class="cardMeta">NimBLE, custom frames, ACK/NACK</text>
+  <text x="115" y="605" class="cardTitle" fill="#4ADE80">FreeRTOS Kernel Substrate</text>
+
+  <!-- COLUMN 2: iOS Native -->
+  <g filter="url(#shadow)">
+    <rect x="444" y="150" width="330" height="490" rx="24" fill="url(#iosGrad)" stroke="#6D28D9"/>
+  </g>
+  <text x="476" y="194" class="groupTitle">iOS Native Runtime</text>
+
+  <!-- iOS Nodes -->
+  <g filter="url(#shadow)">
+    <!-- HealthKit Floating OS Block -->
+    <rect x="465" y="220" width="288" height="54" rx="14" fill="#1C1C1E" stroke="#E5E5EA" stroke-opacity="0.4"/>
+    <rect x="465" y="290" width="288" height="54" rx="14" fill="#0F172A" stroke="#334155"/>
+    <rect x="465" y="360" width="288" height="54" rx="14" fill="#0F172A" stroke="#334155"/>
+    <rect x="465" y="430" width="288" height="54" rx="14" fill="#0F172A" stroke="#334155"/>
+    <rect x="465" y="500" width="288" height="54" rx="14" fill="#0F172A" stroke="#3B82F6"/>
+  </g>
+
+  <rect x="477" y="228" width="6" height="38" rx="3" fill="#FF2D55"/>
+  <rect x="477" y="298" width="6" height="38" rx="3" fill="#F472B6"/>
+  <rect x="477" y="368" width="6" height="38" rx="3" fill="#A78BFA"/>
+  <rect x="477" y="438" width="6" height="38" rx="3" fill="#A78BFA"/>
+  <rect x="477" y="508" width="6" height="38" rx="3" fill="#3B82F6"/>
+
+  <text x="495" y="242" class="cardTitle" fill="#FFFFFF">Apple HealthKit (OS)</text>
+  <text x="495" y="260" class="cardMeta">Device-local background observer</text>
+  <text x="495" y="312" class="cardTitle">Native Health Ingestion</text>
+  <text x="495" y="330" class="cardMeta">HOT/COLD lanes, normalization</text>
+  <text x="495" y="382" class="cardTitle">Persistence &amp; Security</text>
+  <text x="495" y="400" class="cardMeta">Health SQLite, Keychain, Reinstall detect</text>
+  <text x="495" y="452" class="cardTitle">RN Bridge Shims (Boundary)</text>
+  <text x="495" y="470" class="cardMeta">Event emitters, native module exports</text>
+  <text x="495" y="522" class="cardTitle">Native BLE Runtime</text>
+  <text x="495" y="540" class="cardMeta">CoreBluetooth, connection restoration</text>
+
+  <!-- COLUMN 3: React Native -->
+  <g filter="url(#shadow)">
+    <rect x="824" y="150" width="330" height="490" rx="24" fill="url(#rnGrad)" stroke="#0284C7"/>
+  </g>
+  <text x="856" y="194" class="groupTitle">React Native Application</text>
+
+  <!-- RN Nodes -->
+  <g filter="url(#shadow)">
+    <rect x="845" y="220" width="288" height="54" rx="14" fill="#0F172A" stroke="#334155"/>
+    <rect x="845" y="290" width="288" height="54" rx="14" fill="#0F172A" stroke="#334155"/>
+    <rect x="845" y="360" width="288" height="54" rx="14" fill="#0F172A" stroke="#334155"/>
+    <rect x="845" y="430" width="288" height="54" rx="14" fill="#0F172A" stroke="#334155"/>
+  </g>
+
+  <rect x="857" y="228" width="6" height="38" rx="3" fill="#38BDF8"/>
+  <rect x="857" y="298" width="6" height="38" rx="3" fill="#38BDF8"/>
+  <rect x="857" y="368" width="6" height="38" rx="3" fill="#F97316"/>
+  <rect x="857" y="438" width="6" height="38" rx="3" fill="#A78BFA"/>
+
+  <text x="875" y="242" class="cardTitle">React Native UI</text>
+  <text x="875" y="260" class="cardMeta">Components, screens, user interaction</text>
+  <text x="875" y="312" class="cardTitle">Hooks &amp; Context Providers</text>
+  <text x="875" y="330" class="cardMeta">App state, Bluetooth connection context</text>
+  <text x="875" y="382" class="cardTitle">JS Services &amp; Sync Engine</text>
+  <text x="875" y="400" class="cardMeta">Event ID sync, OTA streaming, repos</text>
+  <text x="875" y="452" class="cardTitle">TS Native Wrappers</text>
+  <text x="875" y="470" class="cardMeta">Strictly typed drivers for NativeModules</text>
+
+  <!-- COLUMN 4: Network -->
+  <g filter="url(#shadow)">
+    <rect x="1204" y="150" width="330" height="490" rx="24" fill="url(#netGrad)" stroke="#334155"/>
+  </g>
+  <text x="1236" y="194" class="groupTitle">Network Services</text>
+
+  <!-- Network Nodes -->
+  <g filter="url(#shadow)">
+    <rect x="1225" y="360" width="288" height="54" rx="14" fill="#0F172A" stroke="#334155"/>
+    <rect x="1225" y="580" width="288" height="54" rx="14" fill="#0F172A" stroke="#334155"/>
+  </g>
+
+  <rect x="1237" y="368" width="6" height="38" rx="3" fill="#10B981"/>
+  <rect x="1237" y="588" width="6" height="38" rx="3" fill="#FCD34D"/>
+
+  <text x="1255" y="382" class="cardTitle">Backend API</text>
+  <text x="1255" y="400" class="cardMeta">Cloud data sync, telemetry endpoints</text>
+  <text x="1255" y="602" class="cardTitle">NTP Servers</text>
+  <text x="1255" y="620" class="cardMeta">Absolute time anchoring for device</text>
+
+  <!-- =============================== -->
+  <!-- INTERNAL DOMAIN ROUTING ARROWS  -->
+  <!-- =============================== -->
+
+  <!-- Firmware Vertical -->
+  <path d="M229 274 L229 288" stroke="#475569" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <path d="M229 344 L229 358" stroke="#475569" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <path d="M229 414 L229 428" stroke="#475569" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <path d="M229 484 L229 498" stroke="#475569" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- Native Vertical -->
+  <path d="M609 274 L609 288" stroke="#FF2D55" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <path d="M609 344 L609 358" stroke="#475569" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <path d="M570 344 C570 390 570 410 570 428" stroke="#475569" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+  <path d="M609 498 L609 486" stroke="#475569" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- RN Vertical -->
+  <path d="M989 274 L989 288" stroke="#475569" stroke-width="2.5" marker-start="url(#arrow-rev)" marker-end="url(#arrow)"/>
+  <path d="M989 344 L989 358" stroke="#475569" stroke-width="2.5" marker-start="url(#arrow-rev)" marker-end="url(#arrow)"/>
+  <path d="M989 414 L989 428" stroke="#475569" stroke-width="2.5" marker-start="url(#arrow-rev)" marker-end="url(#arrow)"/>
+
+  <!-- =============================== -->
+  <!-- CROSS-BOUNDARY ROUTING ARROWS   -->
+  <!-- =============================== -->
+
+  <!-- 1. FW BLE <-> Native BLE -->
+  <path d="M375 527 L463 527" stroke="#94A3B8" stroke-width="3" marker-start="url(#arrow-rev)" marker-end="url(#arrow)"/>
+  
+  <!-- 2. RN Bridge <-> TS Wrappers -->
+  <path d="M755 457 L843 457" stroke="#94A3B8" stroke-width="3" marker-start="url(#arrow-rev)" marker-end="url(#arrow)"/>
+
+  <!-- 3. JS Services -> Backend API -->
+  <path d="M1135 387 L1223 387" stroke="#94A3B8" stroke-width="3" marker-start="url(#arrow-rev)" marker-end="url(#arrow)"/>
+
+  <!-- 4. OTA SoftAP: JS Services -> Firmware SoftAP (Clean orthogonal "Over the Top" bypass path) -->
+  <path d="M 843 387 L 815 387 Q 800 387 800 372 L 800 149 Q 800 134 785 134 L 435 134 Q 420 134 420 149 L 420 442 Q 420 457 405 457 L 375 457" stroke="#D946EF" stroke-width="3" stroke-dasharray="6,4" fill="none" marker-end="url(#arrow)"/>
+
+  <!-- 5. NTP: Firmware Services -> NTP (Deep underbelly curve) -->
+  <path d="M375 387 C500 387 450 690 800 690 C 1150 690 1100 607 1223 607" stroke="#94A3B8" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+
+  <!-- =============================== -->
+  <!-- CENTERED PATH LABEL PILLS       -->
+  <!-- =============================== -->
+
+  <!-- Custom BLE -->
+  <rect x="365" y="512" width="108" height="30" rx="15" fill="#0F172A" stroke="#334155"/>
+  <text x="419" y="531" text-anchor="middle" class="label">Custom BLE</text>
+
+  <!-- JS Bridge -->
+  <rect x="755" y="442" width="84" height="30" rx="15" fill="#0F172A" stroke="#334155"/>
+  <text x="797" y="461" text-anchor="middle" class="label">JS Bridge</text>
+
+  <!-- HTTPS Sync -->
+  <rect x="1134" y="372" width="94" height="30" rx="15" fill="#0F172A" stroke="#334155"/>
+  <text x="1181" y="391" text-anchor="middle" class="label">HTTPS Sync</text>
+
+  <!-- HTTP OTA Upload (Centered perfectly on the new top bridge) -->
+  <rect x="545" y="119" width="130" height="30" rx="15" fill="#181124" stroke="#D946EF" stroke-opacity="0.5"/>
+  <text x="610" y="138" text-anchor="middle" class="label" fill="#E879F9">HTTP OTA Upload</text>
+
+  <!-- Direct Wi-Fi / NTP -->
+  <rect x="740" y="675" width="120" height="30" rx="15" fill="#0F172A" stroke="#334155"/>
+  <text x="800" y="694" text-anchor="middle" class="label">Direct Wi‑Fi Sync</text>
+
+  <!-- Footer -->
+  <line x1="64" y1="650" x2="1536" y2="650" stroke="#1E293B"/>
+  <text x="64" y="680" class="small"></text>
+</svg>

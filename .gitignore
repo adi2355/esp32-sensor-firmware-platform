@@ -1,0 +1,8 @@
+
+.pio/
+*.zip
+dist/*.bin
+flasher-package/binaries/*.bin
+flasher-package-v*/
+tools/__pycache__/
+*.pyc

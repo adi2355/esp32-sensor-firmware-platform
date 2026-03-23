@@ -1,0 +1,169 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="820" viewBox="0 0 1600 820" role="img" aria-labelledby="title2 desc2">
+  <title id="title2">Firmware Runtime Components &amp; Tasks</title>
+  <desc id="desc2">Accurate concurrency diagram distinguishing FreeRTOS tasks, async workers, peer services, and the dedicated BLE radio stack.</desc>
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1220"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="core1Grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#102235"/>
+      <stop offset="100%" stop-color="#162B44"/>
+    </linearGradient>
+    <linearGradient id="core0Grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#12283A"/>
+      <stop offset="100%" stop-color="#14324A"/>
+    </linearGradient>
+    
+    <!-- Exact, non-scaling markers for precision pathing -->
+    <marker id="arrow" markerWidth="14" markerHeight="14" refX="13" refY="7" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,1 L12,7 L0,13 Z" fill="#94A3B8"/>
+    </marker>
+    <!-- Reverse marker for bidirectional starts -->
+    <marker id="arrow-start" markerWidth="14" markerHeight="14" refX="1" refY="7" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M14,1 L2,7 L14,13 Z" fill="#94A3B8"/>
+    </marker>
+    
+    <filter id="shadow2" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#020617" flood-opacity="0.28"/>
+    </filter>
+    <style>
+      .title { font: 700 30px Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #F8FAFC; }
+      .subtitle { font: 400 15px Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #94A3B8; }
+      .groupTitle { font: 700 18px Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #E2E8F0; }
+      .groupCopy { font: 400 13px Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #A7B4C8; }
+      .cardTitle { font: 700 15px Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #F8FAFC; }
+      .cardMeta { font: 400 12px Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #C7D2E1; }
+      .label { font: 700 12px Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #E2E8F0; letter-spacing: 0.02em; }
+      .small { font: 500 11px Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #94A3B8; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="820" rx="28" fill="url(#bg2)"/>
+  <rect x="32" y="32" width="1536" height="756" rx="24" fill="none" stroke="#1E293B"/>
+
+  <text x="64" y="84" class="title">Firmware Runtime Components &amp; Tasks</text>
+  <text x="64" y="112" class="subtitle">Architectural view of pinned FreeRTOS execution units, async handoffs, and peer subsystems.</text>
+
+  <!-- Core Backgrounds -->
+  <g filter="url(#shadow2)">
+    <rect x="64" y="160" width="1120" height="530" rx="24" fill="url(#core1Grad)" stroke="#2563EB"/>
+    <rect x="1220" y="160" width="316" height="530" rx="24" fill="url(#core0Grad)" stroke="#0284C7"/>
+  </g>
+
+  <text x="96" y="204" class="groupTitle">CPU Core 1 · Application Substrate</text>
+  <text x="96" y="228" class="groupCopy">High-priority sensor acquisition, async data pipelines, and orchestration.</text>
+  
+  <text x="1252" y="204" class="groupTitle">CPU Core 0 · Radio</text>
+  <text x="1252" y="228" class="groupCopy">Dedicated BLE transport and RTOS network handling.</text>
+
+  <!-- Node Boxes -->
+  <g filter="url(#shadow2)">
+    <rect x="420" y="270" width="350" height="88" rx="20" fill="#2B1E0F" stroke="#F59E0B"/>
+    <rect x="120" y="424" width="310" height="92" rx="20" fill="#0F172A" stroke="#334155"/>
+    <rect x="760" y="408" width="320" height="108" rx="20" fill="#0F271B" stroke="#22C55E"/>
+    <rect x="96" y="586" width="236" height="88" rx="20" fill="#0F172A" stroke="#334155"/>
+    <rect x="370" y="586" width="260" height="88" rx="20" fill="#0F172A" stroke="#334155"/>
+    <rect x="660" y="586" width="260" height="88" rx="20" fill="#0F172A" stroke="#334155"/>
+    <rect x="940" y="586" width="220" height="88" rx="20" fill="#0F172A" stroke="#334155"/>
+    <rect x="1262" y="424" width="232" height="112" rx="20" fill="#0F172A" stroke="#38BDF8"/>
+  </g>
+
+  <!-- Accent Bars -->
+  <rect x="438" y="288" width="8" height="52" rx="4" fill="#FBBF24"/>
+  <rect x="138" y="442" width="8" height="52" rx="4" fill="#64748B"/>
+  <rect x="778" y="428" width="8" height="52" rx="4" fill="#4ADE80"/>
+  <rect x="114" y="604" width="8" height="52" rx="4" fill="#64748B"/>
+  <rect x="388" y="604" width="8" height="52" rx="4" fill="#64748B"/>
+  <rect x="678" y="604" width="8" height="52" rx="4" fill="#64748B"/>
+  <rect x="958" y="604" width="8" height="52" rx="4" fill="#64748B"/>
+  <rect x="1280" y="444" width="8" height="52" rx="4" fill="#38BDF8"/>
+
+  <!-- Text Contents -->
+  <text x="462" y="306" class="cardTitle">SensorTask</text>
+  <text x="462" y="326" class="cardMeta">Priority 10 · 20 Hz polling &amp; hit evaluation</text>
+
+  <text x="162" y="460" class="cardTitle">DataLoggerService</text>
+  <text x="162" y="480" class="cardMeta">Buffers sample windows for async consumers</text>
+
+  <text x="802" y="446" class="cardTitle">ProtocolTask / Transport</text>
+  <text x="802" y="466" class="cardMeta">Event routing, binary transport, &amp; orchestration</text>
+
+  <text x="138" y="622" class="cardTitle">LoggerTask</text>
+  <text x="138" y="642" class="cardMeta">Priority 1 · Persist sample windows</text>
+
+  <text x="412" y="622" class="cardTitle">InferenceTask</text>
+  <text x="412" y="642" class="cardMeta">Priority 3 · On-device gesture ML</text>
+
+  <text x="702" y="622" class="cardTitle">Storage &amp; Config Workers</text>
+  <text x="702" y="642" class="cardMeta">Priority 1/2 · Async NVS &amp; RTC updates</text>
+
+  <text x="982" y="622" class="cardTitle">System Managers</text>
+  <text x="982" y="642" class="cardMeta">PowerManager · OTAManager · TimeService</text>
+
+  <text x="1304" y="462" class="cardTitle">NimBLE Host / Controller</text>
+  <text x="1304" y="482" class="cardMeta">Isolated BLE stack &amp; radio interrupts</text>
+
+  <!-- ========================================== -->
+  <!-- PRECISION ARROWS & EXPLICIT HANDOFFS       -->
+  <!-- ========================================== -->
+  
+  <!-- SensorTask -> DataLogger -->
+  <path d="M470 358 C420 380 340 390 275 422" stroke="#94A3B8" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+  
+  <!-- SensorTask -> ProtocolTask -->
+  <path d="M720 358 C780 380 840 390 920 406" stroke="#94A3B8" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+  
+  <!-- DataLogger -> LoggerTask -->
+  <path d="M214 516 L214 584" stroke="#94A3B8" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+  
+  <!-- DataLogger -> InferenceTask -->
+  <path d="M350 516 C400 540 450 550 500 584" stroke="#94A3B8" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+  
+  <!-- ProtocolTask -> ConfigWorker -->
+  <path d="M820 516 L790 584" stroke="#94A3B8" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+  
+  <!-- ProtocolTask <-> System Managers (Bidirectional Peer Orchestration) -->
+  <path d="M980 516 C1000 540 1020 550 1050 584" stroke="#94A3B8" stroke-width="3" fill="none" marker-start="url(#arrow-start)" marker-end="url(#arrow)"/>
+  
+  <!-- ProtocolTask <-> NimBLE Host (Bidirectional Transport) -->
+  <path d="M1082 462 L1260 462" stroke="#94A3B8" stroke-width="3" fill="none" marker-start="url(#arrow-start)" marker-end="url(#arrow)"/>
+
+  <!-- ========================================== -->
+  <!-- CENTERED PATH LABEL PILLS                  -->
+  <!-- ========================================== -->
+  
+  <g>
+    <!-- Sensor -> Logger -->
+    <rect x="310" y="375" width="116" height="30" rx="15" fill="#0F172A" stroke="#334155"/>
+    <text x="368" y="394" text-anchor="middle" class="label">20 Hz sampling</text>
+
+    <!-- Sensor -> Protocol -->
+    <rect x="760" y="367" width="130" height="30" rx="15" fill="#0F172A" stroke="#334155"/>
+    <text x="825" y="386" text-anchor="middle" class="label">[Notify] Hit detect</text>
+
+    <!-- Logger -> LoggerTask -->
+    <rect x="144" y="535" width="140" height="30" rx="15" fill="#0F172A" stroke="#334155"/>
+    <text x="214" y="554" text-anchor="middle" class="label">[Queue] Raw samples</text>
+
+    <!-- Logger -> InferenceTask -->
+    <rect x="360" y="535" width="150" height="30" rx="15" fill="#0F172A" stroke="#334155"/>
+    <text x="435" y="554" text-anchor="middle" class="label">[Notify] Window ready</text>
+
+    <!-- Protocol -> Storage Worker -->
+    <rect x="710" y="535" width="160" height="30" rx="15" fill="#0F172A" stroke="#334155"/>
+    <text x="790" y="554" text-anchor="middle" class="label">[Queue] Deferred write</text>
+
+    <!-- Protocol <-> Managers -->
+    <rect x="945" y="535" width="150" height="30" rx="15" fill="#0F172A" stroke="#334155"/>
+    <text x="1020" y="554" text-anchor="middle" class="label">Orchestrate &amp; Query</text>
+
+    <!-- Protocol <-> NimBLE -->
+    <rect x="1102" y="447" width="138" height="30" rx="15" fill="#0F172A" stroke="#334155"/>
+    <text x="1171" y="466" text-anchor="middle" class="label">Binary Protocol (RX/TX)</text>
+  </g>
+
+  <!-- Footer -->
+  <rect x="96" y="720" width="1440" height="44" rx="16" fill="#0F172A" stroke="#1E293B"/>
+  <text x="124" y="746" class="small">Visual strategy: Explicit async handoffs (Queues/Notifications). Peer managers instead of nested state. Bidirectional binary transport interface.</text>
+</svg>
