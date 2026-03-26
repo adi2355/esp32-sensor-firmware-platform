@@ -58,6 +58,7 @@ Our architecture prioritizes **data integrity**, **fault recovery**, and **deter
 </table>
 
 <br>
+
 ## Engineering Principles
 
 ### 1. Isolate time-critical paths from blocking work
