@@ -20,6 +20,44 @@ Our architecture prioritizes **data integrity**, **fault recovery**, and **deter
 
 <br>
 
+## Technology Stack
+
+<table>
+  <tr>
+    <td><strong>MCU</strong></td>
+    <td><img src="https://img.shields.io/badge/ESP32--S3-E7352C?style=flat-square&logo=espressif&logoColor=white" alt="ESP32-S3" /></td>
+  </tr>
+  <tr>
+    <td><strong>RTOS</strong></td>
+    <td><img src="https://img.shields.io/badge/FreeRTOS-59B256?style=flat-square&logo=freertos&logoColor=white" alt="FreeRTOS" /></td>
+  </tr>
+  <tr>
+    <td><strong>Language</strong></td>
+    <td><img src="https://img.shields.io/badge/C++-00599C?style=flat-square&logo=cplusplus&logoColor=white" alt="C++" /> <img src="https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=c&logoColor=black" alt="C" /></td>
+  </tr>
+  <tr>
+    <td><strong>Build</strong></td>
+    <td><img src="https://img.shields.io/badge/PlatformIO-F5822A?style=flat-square&logo=platformio&logoColor=white" alt="PlatformIO" /></td>
+  </tr>
+  <tr>
+    <td><strong>BLE Stack</strong></td>
+    <td><img src="https://img.shields.io/badge/NimBLE-0082FC?style=flat-square&logo=bluetooth&logoColor=white" alt="NimBLE" /></td>
+  </tr>
+  <tr>
+    <td><strong>iOS Companion</strong></td>
+    <td><img src="https://img.shields.io/badge/Swift-F05138?style=flat-square&logo=swift&logoColor=white" alt="Swift" /> <img src="https://img.shields.io/badge/CoreBluetooth-007AFF?style=flat-square&logo=apple&logoColor=white" alt="CoreBluetooth" /></td>
+  </tr>
+  <tr>
+    <td><strong>Storage</strong></td>
+    <td><img src="https://img.shields.io/badge/NVS-333333?style=flat-square&logoColor=white" alt="NVS" /> <img src="https://img.shields.io/badge/SPIFFS-333333?style=flat-square&logoColor=white" alt="SPIFFS" /> <img src="https://img.shields.io/badge/RTC_Memory-333333?style=flat-square&logoColor=white" alt="RTC Memory" /></td>
+  </tr>
+  <tr>
+    <td><strong>Connectivity</strong></td>
+    <td><img src="https://img.shields.io/badge/BLE_5.0-0082FC?style=flat-square&logo=bluetooth&logoColor=white" alt="BLE 5.0" /> <img src="https://img.shields.io/badge/Wi--Fi_SoftAP-000000?style=flat-square&logo=wifi&logoColor=white" alt="Wi-Fi SoftAP" /></td>
+  </tr>
+</table>
+
+
 ## Engineering Principles
 
 ### 1. Isolate time-critical paths from blocking work
